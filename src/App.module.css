@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+  border: solid black 1px;
+  margin: 2em;
+}
+.containerContinent{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin: 5%;
+}
+.flag{
+  width: 100px;
+  height: 100px;
+}

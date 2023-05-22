@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Continent from './pages/Continent/Continent';
 import ListPays from './pages/ListPays/ListPays';
@@ -13,7 +13,7 @@ function App() {
   });
   
   return (
-    <div className="App">
+    <div className={styles.App}>
     <ApolloProvider client={client}>
       <BrowserRouter>
         <Routes>

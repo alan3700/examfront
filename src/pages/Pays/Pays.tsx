@@ -1,8 +1,6 @@
-import { DocumentNode, gql, useQuery } from "@apollo/client";
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import ReactEmojiRender from 'react-emoji-render';
-
+import { gql, useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
+import styles from '../../App.module.css';
 interface Pays {
   name: string;
   code:string;
@@ -35,7 +33,7 @@ function Pays() {
   return (
 <>
 <h1>{data?.country?.name}</h1>
-<img src={`//s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/${data?.country.name.toLowerCase()}.png`} alt="Flag" />
+<img className={styles.flag} src={`//s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/${data?.country.name.toLowerCase()}.png`} alt="Flag" />
 <p>Currency:{data?.country?.currency}</p>
 <p>Capital:{data?.country?.capital}</p>
 

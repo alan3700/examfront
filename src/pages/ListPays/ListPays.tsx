@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { gql, useQuery } from '@apollo/client';
-
+import styles from '../../App.module.css';
 interface Pays {
   name: string;
   code:string
@@ -29,23 +29,23 @@ function ListPays() {
   return (
 <>
   <h1>ListPays {continent}</h1>
-
-  <ul>
-
+  <div className={styles.containerContinent}>
   {data &&
   data?.countries?.map((pays:Pays) => {
    if( pays.continent.name == continent){
     return (
-      <Link to={`/Pays/${pays.code}`}>
-      <li key={pays.name}>
+      
+      <Link className={styles.link} to={`/Pays/${pays.code}`}>
+      <div key={pays.name}>
+        <img className={styles.flag} src={`//s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/${pays?.name.toLowerCase()}.png`} alt="Flag" />
         <p>{pays.name}</p>
-        <img src={`//s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/${pays?.name.toLowerCase()}.png`} alt="Flag" />
-        </li>
+        </div>
       </Link>
+      
     )
    }
   })}
-  </ul>
+  </div>
 </>
 
 
