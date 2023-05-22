@@ -13,6 +13,7 @@ function App() {
   });
   
   return (
+    <div className="App">
     <ApolloProvider client={client}>
       <BrowserRouter>
         <Routes>
@@ -22,6 +23,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ApolloProvider>
+    </div>
   );
 }
 

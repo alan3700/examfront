@@ -1,7 +1,7 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
-
+import '../../App.css';
 interface Continent {
   name: string;
   code:string;
@@ -31,11 +31,11 @@ function ContinentList (){
 
   return (
     <div>
-      <h2>List of Continents</h2>
-      <ul>
+      <h2>Continents</h2>
+      <ul className='ul'>
         {continents.map((continent:Continent) => (
-          <Link to={`/ListPays/${continent.name}`}>
-          <li key={continent.name}>{continent.name}</li>
+          <Link className='link' to={`/ListPays/${continent.name}`}>
+          <li key={continent.name}>{continent.name}  </li>
           </Link>
         ))}
       </ul>
